@@ -2,8 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Box, Card, CardHeader, Container, Divider, IconButton } from '@mui/material'
+import { Box, Card, CardHeader, Container, Divider, IconButton, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
+import VaccinesOutlinedIcon from '@mui/icons-material/VaccinesOutlined';
 
 function App() {
   const array = Array(5).fill(0);
@@ -27,10 +28,8 @@ function App() {
             
 
           }}>
-            <Box component="p">
-              {'Vaccine Table'}
-            </Box>
-            <Box component="span">
+            <Typography variant='h5'>Vaccine Table</Typography>
+            <Box component="span" sx={{mt:2}}>
               <IconButton>
                 <AddIcon/>
               </IconButton>
@@ -46,7 +45,13 @@ function App() {
               boxShadow: '1px 1px 3px rgba(0,0,0,.25),-1px -1px 3px rgba(0,0,0,.25)',
                }} >
               
-              {index}
+              <Box sx={{display: 'flex', gap: '5px', alignItems: 'center', m: '9px 15px 0px'}}>
+              <VaccinesOutlinedIcon sx={{fontSize : '50px'}}/>
+                <Typography variant='h5'>
+                  Vaccine Name
+                </Typography>
+              </Box>
+              <Divider/>
               
                </Card>
           ))}
